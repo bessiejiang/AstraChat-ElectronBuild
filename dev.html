@@ -10,9 +10,9 @@
     <meta name="keywords" content="xmpp chat webchat converse.js" />
     <link rel="manifest" href="./manifest.json">
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
-    <link type="text/css" rel="stylesheet" media="screen" href="dist/converse.css" />
+    <link type="text/css" rel="stylesheet" media="screen" href="dist/converse.min.css" />
     <script src="https://cdn.conversejs.org/3rdparty/libsignal-protocol.min.js"></script>
-    <script src="dist/converse.js"></script>
+    <script src="dist/converse.min.js"></script>
 </head>
 
 <body class="reset">
@@ -29,7 +29,6 @@
     converse.initialize({
         auto_away: 300,
         enable_smacks: true,
-        i18n: 'af',
         loglevel: 'debug',
         message_archiving: 'always',
         muc_respect_autojoin: true,
@@ -38,8 +37,9 @@
         persistent_store: 'IndexedDB',
         theme: 'concord',
         view_mode: 'fullscreen',
-        websocket_url: 'wss://conversejs.org/xmpp-websocket',
+        websocket_url: 'ws://chat.rockliffe.com:5291/ws/',
         whitelisted_plugins: ['converse-debug'],
+        message_carbons: false
     });
 </script>
 </body>

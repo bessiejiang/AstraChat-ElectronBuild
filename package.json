@@ -1,8 +1,8 @@
 {
-  "name": "converse.js",
-  "version": "7.0.0",
-  "description": "Browser based XMPP chat client",
-  "browser": "dist/converse.js",
+  "name": "AstraChatAlpha",
+  "version": "2.0.6",
+  "description": "",
+  "main": "main.js",
   "module": "src/converse.js",
   "files": [
     "CHANGES.md",
@@ -29,7 +29,11 @@
     "dev": "webpack --config webpack.dev.js",
     "watch": "webpack --watch --config webpack.dev.js",
     "lerna": "lerna bootstrap --hoist --ignore-scripts",
-    "prepare": "npm run lerna && npm run build"
+    "prepare": "npm run lerna && npm run build",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "makef": "electron-forge make --platform=win32"
   },
   "repository": {
     "type": "git",
@@ -45,8 +49,8 @@
     "webchat"
   ],
   "author": {
-    "name": "JC Brand",
-    "email": "jc@opkode.com"
+    "name": "rockliffe",
+    "license": "ISC"
   },
   "license": "MPL-2.0",
   "bugs": {
@@ -115,7 +119,48 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.1",
-    "xss": "^1.0.7"
+    "xss": "^1.0.7",
+    "@electron-forge/cli": "6.0.0-beta.51",
+    "@electron-forge/maker-deb": "6.0.0-beta.51",
+    "@electron-forge/maker-rpm": "6.0.0-beta.51",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.51",
+    "@electron-forge/maker-zip": "6.0.0-beta.51",
+    "electron": "^9.0.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "/Users/littlegrey/Desktop/intern/work/AstraChatLogo.icns",
+        "executableName": "AstraChatAlpha",
+        "name": "AstraChatAlpha",
+        "appVersion": "2.0.5"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "test"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin",
+            "win32"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
 }

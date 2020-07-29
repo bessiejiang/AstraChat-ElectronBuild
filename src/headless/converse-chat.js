@@ -861,12 +861,12 @@ converse.plugins.add('converse-chat', {
                 if (to_bare_jid !== _converse.bare_jid) {
                     return false;
                 }
-                if (attrs.is_markable) {
+                if (attrs.is_markable) { // receiver
                     if (this.contact && !attrs.is_archived && !attrs.is_carbon) {
                         this.sendMarker(attrs.from, attrs.msgid, 'received');
                     }
                     return false;
-                } else if (attrs.marker_id) {
+                } else if (attrs.marker_id) { // sender
                     const message = this.messages.findWhere({'msgid': attrs.marker_id});
                     const field_name = `marker_${attrs.marker}`;
                     if (message && !message.get(field_name)) {
@@ -875,23 +875,24 @@ converse.plugins.add('converse-chat', {
                     return true;
                 }
             },
-
+            // receiver created a received stanza and send it to server
             sendReceiptStanza (to_jid, id) {
                 const receipt_stanza = $msg({
                     'from': _converse.connection.jid,
                     'id': u.getUniqueId(),
                     'to': to_jid,
                     'type': 'chat',
-                }).c('received', {'xmlns': Strophe.NS.RECEIPTS, 'id': id}).up()
+                }).c('received', {'xmlns': Strophe.NS.RECEIPTS, 'id': id}).up() // receipt id
                 .c('store', {'xmlns': Strophe.NS.HINTS}).up();
                 api.send(receipt_stanza);
             },
 
             handleReceipt (attrs) {
                 if (attrs.sender === 'them') {
-                    if (attrs.is_receipt_request) {
+                    
+                    if (attrs.is_receipt_request) { // receiver
                         this.sendReceiptStanza(attrs.from, attrs.msgid);
-                    } else if (attrs.receipt_id) {
+                    } else if (attrs.receipt_id) { // sender
                         const message = this.messages.findWhere({'msgid': attrs.receipt_id});
                         if (message && !message.get('received')) {
                             message.save({'received': (new Date()).toISOString()});
