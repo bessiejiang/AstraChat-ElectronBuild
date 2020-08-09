@@ -870,7 +870,7 @@ converse.plugins.add('converse-chat', {
                     const message = this.messages.findWhere({'msgid': attrs.marker_id});
                     const field_name = `marker_${attrs.marker}`;
                     if (message && !message.get(field_name)) {
-                        message.save({field_name: (new Date()).toISOString()});
+                        message.save({[field_name]: (new Date()).toISOString()});
                     }
                     return true;
                 }
@@ -920,6 +920,7 @@ converse.plugins.add('converse-chat', {
 
                 if (message.get('type') === 'chat') {
                     stanza.c('request', {'xmlns': Strophe.NS.RECEIPTS}).root();
+                    stanza.c('markable', {'xmlns': Strophe.NS.MARKERS}).root();
                 }
                 if (message.get('is_spoiler')) {
                     if (message.get('spoiler_hint')) {
