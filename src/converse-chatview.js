@@ -487,7 +487,7 @@ converse.plugins.add('converse-chatview', {
             },
 
             maybeScrollDownOnMessage (message) {
-                if (message.get('sender') === 'me' || !this.model.get('scrolled')) {
+                if (message?.get('sender') === 'me' || this.model.get('scrolled') === false) {
                     this.debouncedScrollDown();
                 }
             },

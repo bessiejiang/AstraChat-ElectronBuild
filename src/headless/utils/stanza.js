@@ -495,6 +495,7 @@ const st = {
                 'is_delayed': !!delay,
                 'is_markable': !!sizzle(`markable[xmlns="${Strophe.NS.MARKERS}"]`, stanza).length,
                 'is_marker': !!marker,
+                'marker': marker && marker.tagName,
                 'marker_id': marker && marker.getAttribute('id'),
                 'msgid': stanza.getAttribute('id') || original_stanza.getAttribute('id'),
                 'nick': contact?.attributes?.nickname,

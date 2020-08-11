@@ -32,6 +32,7 @@ const tpl_message = (o) => html`
         filename=${o.filename || ''}
         filesize=${o.filesize || ''}
         from=${o.from}
+        marker_displayed=${o.marker_displayed || ''}
         message_type=${o.type || ''}
         moderated_by=${o.moderated_by || ''}
         moderation_reason=${o.moderation_reason || ''}
