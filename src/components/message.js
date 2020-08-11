@@ -237,8 +237,8 @@ export default class Message extends CustomElement {
                     ?is_spoiler="${this.is_spoiler}"
                     ?is_spoiler_visible="${this.is_spoiler_visible}"
                     text="${this.model.getMessageText()}"></converse-chat-message-body>
-                ${ (!this.marker_displayed && this.received && !this.is_me_message && !is_groupchat_message) ? html`<span class="fa fa-check chat-msg__receipt"></span>` : '' }
-                ${ (this.marker_displayed && !this.is_me_message && !is_groupchat_message) ? html`<span class="fa fa-check-circle chat-msg__receipt"></span>` : '' }
+                ${ (!this.marker_displayed && this.received && !this.is_me_message && !is_groupchat_message) ? html`<span class="fas fa-dot-circle chat-msg__receipt"></span>` : '' }
+                ${ (this.marker_displayed && !this.is_me_message && !is_groupchat_message) ? html`<span class="far fa-check-circle chat-msg__receipt"></span>` : '' }
                 ${ (this.edited) ? html`<i title="${ i18n_edited }" class="fa fa-edit chat-msg__edit-modal" @click=${this.showMessageVersionsModal}></i>` : '' }
             </span>
             ${ this.oob_url ? html`<div class="chat-msg__media">${u.getOOBURLMarkup(_converse, this.oob_url)}</div>` : '' }
