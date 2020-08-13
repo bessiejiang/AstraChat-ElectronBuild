@@ -467,7 +467,7 @@ const st = {
          * @property { String } oob_url - The URL of the XEP-0066 out of band data
          * @property { String } origin_id - The XEP-0359 Origin ID
          * @property { String } receipt_id - The `id` attribute of a XEP-0184 <receipt> element
-         * @property { String } received - An ISO8601 string recording the time that the message was received
+         //* @property { String } received - An ISO8601 string recording the time that the message was received
          * @property { String } replace_id - The `id` attribute of a XEP-0308 <replace> element
          * @property { String } retracted - An ISO8601 string recording the time that the message was retracted
          * @property { String } retracted_id - The `id` attribute of a XEP-424 <retracted> element
@@ -500,7 +500,7 @@ const st = {
                 'msgid': stanza.getAttribute('id') || original_stanza.getAttribute('id'),
                 'nick': contact?.attributes?.nickname,
                 'receipt_id': getReceiptId(stanza),
-                'received': (new Date()).toISOString(),
+                //'received': (new Date()).toISOString(),
                 'references': getReferences(stanza),
                 'sender': is_me ? 'me' : 'them',
                 'subject': stanza.querySelector('subject')?.textContent,
