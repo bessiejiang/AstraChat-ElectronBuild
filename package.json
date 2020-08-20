@@ -67,6 +67,11 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.10.2",
     "@converse/headless": "file:src/headless",
+    "@electron-forge/cli": "6.0.0-beta.51",
+    "@electron-forge/maker-deb": "6.0.0-beta.51",
+    "@electron-forge/maker-rpm": "6.0.0-beta.51",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.51",
+    "@electron-forge/maker-zip": "6.0.0-beta.51",
     "@fortawesome/fontawesome-free": "5.13.0",
     "autoprefixer": "^9.8.4",
     "babel-eslint": "^10.1.0",
@@ -79,6 +84,7 @@
     "copy-webpack-plugin": "^6.0.2",
     "css-loader": "^3.5.3",
     "dayjs": "1.8.15",
+    "electron": "^9.2.1",
     "eslint": "^7.3.0",
     "eslint-plugin-lodash": "^7.1.0",
     "exports-loader": "^0.7.0",
@@ -119,13 +125,7 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.1",
-    "xss": "^1.0.7",
-    "@electron-forge/cli": "6.0.0-beta.51",
-    "@electron-forge/maker-deb": "6.0.0-beta.51",
-    "@electron-forge/maker-rpm": "6.0.0-beta.51",
-    "@electron-forge/maker-squirrel": "6.0.0-beta.51",
-    "@electron-forge/maker-zip": "6.0.0-beta.51",
-    "electron": "^9.0.4"
+    "xss": "^1.0.7"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
