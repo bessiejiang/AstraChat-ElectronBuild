@@ -145,3 +145,11 @@ A heartfelt thanks for everyone who has supported this project over the years.
 Many people have contributed testing, bugfixes, features and corrections.
 
 We accept donations via [Patreon](https://www.patreon.com/jcbrand) and [Liberapay](https://liberapay.com/jcbrand).
+
+## Run with npm
+
+`git clone https://github.com/bessiejiang/AstraChat-ElectronBuild.git`
+`cd converse.js`
+`npm i`
+`npm install electron --save-dev`
+`npm run start`
