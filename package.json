@@ -84,7 +84,7 @@
     "copy-webpack-plugin": "^6.0.2",
     "css-loader": "^3.5.3",
     "dayjs": "1.8.15",
-    "electron": "^9.2.1",
+    "electron": "^18.3.7",
     "eslint": "^7.3.0",
     "eslint-plugin-lodash": "^7.1.0",
     "exports-loader": "^0.7.0",
